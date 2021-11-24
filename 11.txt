@@ -1,0 +1,38 @@
+*/ 11- Deseja-se publicar o número de acertos de cada aluno em uma prova em forma de testes. A prova consta de 10 questões, cada uma com quatro alternativas identificadas por A, B, C, e D. Para isso são dados:
+ o cartão gabarito;
+ o número de alunos da turma;
+ o cartão de respostas para cada aluno, contendo o seu número e suas respostas.*/
+
+nt main(){
+setlocale(LC_ALL,"portuguese");
+int nAlunos, i, j, questaoCerta;
+char vGabarito [TAM], respostaAluno;
+
+printf ( "\n Digite o nº de alunos: " );
+scanf ( "\n % d " , & nAlunos);
+
+printf("\nGabarito da prova: \ n");
+for (i = 0 ; i<TAM; i ++)
+	{
+	printf ( "\n Resposta da questão % d : " , i + 1 );
+	scanf ( "  % c " , & vGabarito [i]);	
+	}
+
+for (i = 0 ; i <nAlunos; i ++)
+	{
+	questaoCerta = 0 ;	
+	printf("\nAluno % d : \ n ", i + 1 );	
+	for (j = 0 ; j <TAM; j ++)
+		{
+		printf ( "\n Digite a resposta da questão % d : " , j + 1 );
+		scanf ( "\n  % c " , & respostaAluno);	
+			if (respostaAluno == vGabarito [j]) 
+			{
+			questaoCerta ++;	
+			}
+		}
+		printf ( "\n Aluno % d acertou % d questões. " , i + 1 , questaoCerta);
+	}
+
+return  0 ;	
+}

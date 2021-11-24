@@ -1,0 +1,55 @@
+/*
+
+Acima da Diagonal Secundária
+Leia um caractere maiúsculo, que indica uma operação que deve ser realizada e uma matriz M[12][12]. Em seguida, calcule
+e mostre a soma ou a média considerando somente aqueles elementos que estão acima da diagonal secundária da matriz,
+conforme ilustrado abaixo (área verde).
+Entrada
+A primeira linha de entrada contem um único caractere Maiúsculo O ('S' ou 'M'), indicando a operação (Soma ou Média) que
+deverá ser realizada com os elementos da matriz. Seguem os 144 valores de ponto flutuante que compõem a matriz. Você
+pode gerar valores aleatórios para sua matriz se preferir.
+Saída
+Imprima o resultado solicitado (a soma ou média), com 1 casa após o ponto decimal.
+*/
+
+#include<stdio.h>
+#include <locale.h>
+
+int main()
+{
+	setlocale(LC_ALL, "Portuguese");
+	
+	int n=12,m=12,l,c;
+	float matriz[n][m],soma=0;
+	char op[1];
+	
+	scanf("%c",&op[0]);
+
+	for(l=0;l<n;l++){
+		for(c=0;c<m;c++){
+			scanf("%f",&matriz[l][c]);
+		}
+	}
+	
+	if(op[0] == 'S'){
+	for(l=0;l<n;l++){
+	for(c=0;c<m;c++){
+	if(c>l){
+					soma+=matriz[l][m-c-1];
+				}
+			}
+		}
+		printf("\n%.2f",soma); 
+	}else if(op[0]=='M'){
+		for(l=0;l<n;l++){
+		for(c=0;c<m;c++){
+		if(c>l){
+		soma+=matriz[l][m-c-1];
+				}
+			}
+		}
+		printf("\n%.2f",soma/66); 
+	}
+	
+    return 0;
+}

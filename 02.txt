@@ -1,0 +1,36 @@
+/*Dado um vetor A de n números reais, faça um programa para obter o maior e o menor elemento do vetor, apresente o vetor, maior e menor valor.*/
+#include<stdio.h>
+#include<stdlib.h>
+#include<locale.h>
+#include<math.h>
+int main()
+{
+	int maior=0, menor=0, i; 
+	int NR[4];
+	printf ("Obtenha o maior e menor valor de um vetor de numeros reais: \n"); 
+	for(i=0; i<4; i++)
+	{
+	printf ("NR[%d]: ",i+1);
+	scanf("%d",&NR[i]);
+	}
+	 for (i=0; i<4; ++i)  
+	{	
+	if(i==0){
+	maior = NR[i];
+	menor = NR[i];
+	}
+    if (NR[i] > maior)maior = NR[i];
+		 else {
+	if(i==0){
+	maior = NR[i];
+	menor = NR[i];
+	}
+    if (NR[i] < menor)menor = NR[i];
+	}
+     }
+     
+      	 printf("\n\n Maior numero real: %d\n", maior);
+     	 printf(" Menor numero real: %d\n", menor);
+     	 system("PAUSE");
+		return 0; 
+}

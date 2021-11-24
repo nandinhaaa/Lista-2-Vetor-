@@ -1,0 +1,46 @@
+/* 18 Receba uma matriz N por M e conte quantos números maiores que X existem na matriz. X deve ser informado pelo usuário.*/
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+main ()
+{
+	int mat[100][100],i,j,x,m,n,numero;
+	
+	printf("Digite a Quantidade de Linhas da matriz: ");
+	scanf("%d",&n);
+	
+	printf("Digite a Quantidade de Colunas da matriz: ");
+	scanf("%d",&m);
+	
+	printf("Digite qual numero deseja iniciar a busca dos numeros maiores: ");
+	scanf("%d",&numero);
+	
+	printf("\n\n\nMATRIZ\n\n\n");
+	for (i=0;i<n;i++)
+	{
+		printf("Linha %d\n",i+1);
+		for (j=0;j<m;j++)
+		{
+			mat[i][j] = rand() % 100;
+			printf ("mat[%d][%d] = %d \n",i,j,mat[i][j]);
+		}
+	}
+	printf("\n FINAL MATRIZ \n");
+	/*_____________________________________________________________*/
+	printf("\n\n\nNumeros encontrados na matriz maiores que %d.\n",numero);
+	for (i=0;i<n;i++)
+	{
+		for (j=0;j<m;j++)
+		{
+			if(numero<mat[i][j]){
+				printf (" %d |",mat[i][j]);
+			}
+			
+		}
+	}
+	
+	
+	
+return 0;
+system("PAUSE");
+}
